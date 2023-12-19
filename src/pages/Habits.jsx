@@ -19,6 +19,34 @@ const Habits = ({ habits, setHabits}) => {
     localStorage.setItem("streaks", JSON.stringify(streaks));
   }, [habits, streaks]);
 
+
+  const handleSort = (sortByField, sortOrder) => {
+    const sortHabits = [...filteredHabits].sort((a, b) => {
+      let compareValueA, compareValueB;
+
+      if(sortByField === "streak") {
+        compareValueA = a.startStreak;
+        compareValueB = b.startStreak;
+      } else if (sortByField === "priority") {
+        compareValueA = priorityOrder[a.priority];
+        compareValueB = priorityOrder[b.priority];
+      } else {
+        compareValueA = a.startStreak;
+        compareValueB = b.startStreak;
+      }
+
+      const sortMulti = sortOrder === "highest to lowest" ? -1 : 1;
+
+      return sortMulti * (compareValueB - compareValueA);
+    });
+
+    setFilteredHabits(sortHabits);
+  }
+
+
+
+
+
   return (
     <>
     
