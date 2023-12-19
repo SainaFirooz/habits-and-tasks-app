@@ -1,20 +1,20 @@
-import NewHabit from './pages/NewHabit';
-import Habits from './pages/Habits';
-import HomePage from './pages/HomePage';
+import React, { useState } from "react";
+import { Routes, Route } from "react-router-dom";
+import Habits from "./pages/Habits";
+import HomePage from "./pages/HomePage";
+import NewHabit from "./pages/NewHabit";
 
-import { Routes, Route } from 'react-router-dom';
+const App = () => {
+  const storedHabits = JSON.parse(localStorage.getItem("habits")) || [];
+  const [habits, setHabits] = useState(storedHabits);
+  
 
-function App() {
   return (
-    <div className="App">
-      <Routes>
-        <Route path="/" element={<HomePage/>} />
-        <Route path='/habits' element={<Habits/>}/>
-        <Route path="/NewHabit" element={<NewHabit/>} />
+    <div>
 
-      </Routes>
     </div>
-  );
+  )
 }
+
 
 export default App;
