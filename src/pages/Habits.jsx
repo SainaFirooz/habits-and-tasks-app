@@ -108,6 +108,18 @@ const Habits = ({ habits, setHabits }) => {
     localStorage.setItem("habits", JSON.stringify(updatedHabits));
   };
 
+  const resetAllStreaks = () => {
+    setStreaks({});
+
+    setHabits((prevHabits) =>
+      prevHabits.map((habit) => ({
+        ...habit,
+        startStreak: 0,
+      }))
+    );
+  };
+
+  
   return <></>;
 };
 
