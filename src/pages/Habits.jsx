@@ -1,9 +1,20 @@
+import { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import Nav from "../compartments/Nav";
+
+
 const Habits = () => {
-    return (
-      <>
-        <h1>My Habits</h1>
-      </>
-    );
-  };
+  const [filteredHabits, setFilteredHabits] = useState([]);
+  const [streakOrder, setStreakOrder] = useState("highest to lowest");
+  const [priorityOrder, setPriorityOrder] = useState("highest to lowest");
   
-  export default Habits;
+
+
+  return (
+    <>
+    
+    </>
+  );
+};
+
+export default Habits;
