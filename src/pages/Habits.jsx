@@ -142,6 +142,25 @@ const Habits = ({ habits, setHabits }) => {
         Sortera Prioritet ({prioritySort})
       </button>
 
+      <table>
+        <thead>
+          <tr>
+            <th>Titel</th>
+            <th>Prioritet</th>
+            <th>Öka</th>
+            <th>Streak</th>
+            <th>Minska</th>
+            <th>Nolställa</th>
+            <th>Ta bort</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+
+
+      </table>
+
       
       
       
