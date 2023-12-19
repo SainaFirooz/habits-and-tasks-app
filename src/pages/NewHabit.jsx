@@ -25,12 +25,21 @@ const NewHabit = ({ addHabit }) => {
       <Nav />
       <form onSubmit={formSubmit}>
         <div>
-          <label>Titel:</label>
+          <label>Titel: </label>
           <input
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+          />
+        </div>
+
+        <div>
+          <label>Streak: </label>
+          <input 
+          type="number"
+          value={startStreak}
+          onChange={handleStreakChange}
           />
         </div>
       </form>
