@@ -119,8 +119,31 @@ const Habits = ({ habits, setHabits }) => {
     );
   };
 
+
+  return ( 
+  <>
+     <h1>Mina Vanor</h1>
+     <Nav />
+     {!habits || habits.length === 0 ? ( 
+      <p>Inga vanor att visa. Vänligen skapa en.</p>
+     ) : ( 
+      <> 
+      
+      
+      
+      </>
+      
+
+
+
+
+     )}
+
   
-  return <></>;
+  
+  </>
+
+  );
 };
 
 export default Habits;
