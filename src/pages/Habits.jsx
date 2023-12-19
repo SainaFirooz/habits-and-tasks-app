@@ -47,9 +47,7 @@ const Habits = ({ habits, setHabits }) => {
 
   const handleStreakSort = () => {
     const streakOrder =
-      streakSort === "högst till lägs"
-        ? "lägst till högst"
-        : "högst till lägs";
+      streakSort === "högst till lägs" ? "lägst till högst" : "högst till lägs";
     setStreakSort(streakOrder);
     handleSort("streak", streakOrder);
   };
@@ -121,87 +119,69 @@ const Habits = ({ habits, setHabits }) => {
     );
   };
 
+  return (
+    <>
+      <h1>Mina Vanor</h1>
+      <Nav />
+      {!habits || habits.length === 0 ? (
+        <p>Inga vanor att visa. Vänligen skapa en.</p>
+      ) : (
+        <>
+          <button onClick={() => navigate("/NewHabit")}>Skapa ny vana</button>
 
-  return ( 
-  <>
-     <h1>Mina Vanor</h1>
-     <Nav />
-     {!habits || habits.length === 0 ? ( 
-      <p>Inga vanor att visa. Vänligen skapa en.</p>
-     ) : ( 
-      <> 
-      <button onClick={() => navigate("/NewHabit")}>
-        Skapa ny vana
-      </button>
+          <button onClick={handleStreakSort}>
+            Sortera Streak ({streakSort})
+          </button>
 
-      <button onClick={handleStreakSort}>
-        Sortera Streak ({streakSort})
-      </button>
+          <button onClick={handlePrioritySort}>
+            Sortera Prioritet ({prioritySort})
+          </button>
 
-      <button onClick={handlePrioritySort}>
-        Sortera Prioritet ({prioritySort})
-      </button>
-
-      <table>
-        <thead>
-          <tr>
-            <th>Titel</th>
-            <th>Prioritet</th>
-            <th>Öka</th>
-            <th>Streak</th>
-            <th>Minska</th>
-            <th>Nolställa</th>
-            <th>Ta bort</th>
-          </tr>
-        </thead>
-        <tbody>
-          {filteredHabits.map((habit) => (
-            <tr key={habit.title}>
-              <td>{habit.title}</td>
-              <td>{habit.priority}</td>
-              <td>
-                <button onClick={() => increaseStreak(habit.title)}>
-                 +
-                </button>
-              </td>
-              <td>{habit.startStreak}</td>
-              <td>
-                <button onClick={() => decreaseStreak(habit.title)}>
-                -
-                </button>
-              </td>
-              <td>
-                <button onClick={() => resetStreak(habit.title)}>
-                 Nolställa
-                </button>
-              </td>
-              
-
-              
-            </tr>
-          ))}
-
-        </tbody>
-
-
-      </table>
-
-      
-      
-      
-      
-      </>
-      
-
-
-
-
-     )}
-
-  
-  
-  </>
-
+          <table>
+            <thead>
+              <tr>
+                <th>Titel</th>
+                <th>Prioritet</th>
+                <th>Öka</th>
+                <th>Streak</th>
+                <th>Minska</th>
+                <th>Nolställa</th>
+                <th>Ta bort</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredHabits.map((habit) => (
+                <tr key={habit.title}>
+                  <td>{habit.title}</td>
+                  <td>{habit.priority}</td>
+                  <td>
+                    <button onClick={() => increaseStreak(habit.title)}>
+                      +
+                    </button>
+                  </td>
+                  <td>{habit.startStreak}</td>
+                  <td>
+                    <button onClick={() => decreaseStreak(habit.title)}>
+                      -
+                    </button>
+                  </td>
+                  <td>
+                    <button onClick={() => resetStreak(habit.title)}>
+                      Nolställa
+                    </button>
+                  </td>
+                  <td>
+                    <button onClick={() => deleteHabit(habit.title)}>
+                      Ta bort
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+    </>
   );
 };
 
