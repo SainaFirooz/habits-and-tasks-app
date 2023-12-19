@@ -145,7 +145,7 @@ const Habits = ({ habits, setHabits }) => {
                 <th>Öka</th>
                 <th>Streak</th>
                 <th>Minska</th>
-                <th>Nolställa</th>
+                <th>Nollställa</th>
                 <th>Ta bort</th>
               </tr>
             </thead>
@@ -167,7 +167,7 @@ const Habits = ({ habits, setHabits }) => {
                   </td>
                   <td>
                     <button onClick={() => resetStreak(habit.title)}>
-                      Nolställa
+                      Nollställa
                     </button>
                   </td>
                   <td>
@@ -179,6 +179,8 @@ const Habits = ({ habits, setHabits }) => {
               ))}
             </tbody>
           </table>
+
+          <button onClick={resetAllStreaks}>Nollställa alla streaks</button>
         </>
       )}
     </>
