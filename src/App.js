@@ -8,7 +8,7 @@ const App = () => {
   const storedHabits = JSON.parse(localStorage.getItem("habits")) || [];
   const [habits, setHabits] = useState(storedHabits);
   const storedStreaks = JSON.parse(localStorage.getItem("streaks")) || {};
-  const [streaks, setStreaks] = useState(storedHabits);
+  const [streaks, setStreaks] = useState(storedStreaks);
   const [topThreeHabits, setTopThreeHabits] = useState([]);
   const priorityOrder = { low: 1, medium: 2, high: 3 };
 
