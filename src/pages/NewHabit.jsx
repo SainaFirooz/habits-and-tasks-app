@@ -7,7 +7,6 @@ const NewHabit = ({ addHabit }) => {
   const [startStreak, setStartStreak] = useState(0);
   const [priority, setPriority] = useState("low");
 
-  
   const handleStreakChange = (e) => {
     const newStreak = parseInt(e.target.value, 10);
     setStartStreak(newStreak >= 0 ? newStreak : 0);
@@ -22,14 +21,21 @@ const NewHabit = ({ addHabit }) => {
 
   return (
     <>
-    <h1>Lägg till en ny vana</h1>
-    <Nav/>
-
+      <h1>Lägg till en ny vana</h1>
+      <Nav />
+      <form onSubmit={formSubmit}>
+        <div>
+          <label>Titel:</label>
+          <input
+            type="text"
+            value={title}
+            onChange={(e) => setTitle(e.target.value)}
+            required
+          />
+        </div>
+      </form>
     </>
-
-  )
-
+  );
 };
 
 export default NewHabit;
-
