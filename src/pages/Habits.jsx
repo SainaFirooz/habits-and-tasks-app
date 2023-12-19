@@ -155,7 +155,20 @@ const Habits = ({ habits, setHabits }) => {
           </tr>
         </thead>
         <tbody>
-          
+          {filteredHabits.map((habit) => (
+            <tr key={habit.title}>
+              <td>{habit.title}</td>
+              <td>{habit.priority}</td>
+              <td>
+                <button onClick={() => increaseStreak(habit.title)}>
+                 +
+                </button>
+              </td>
+              <td>{habit.startStreak}</td>
+              
+            </tr>
+          ))}
+
         </tbody>
 
 
