@@ -12,15 +12,15 @@ const HomePage = ({ topThreeHabits }) => {
       <Nav />
 
       <div>
-        <h2>Topp Tre Vanor</h2>
+        <h2>Top Three Habits</h2>
         <div>
           {topThreeHabits.map((habit) => (
             <div key={habit.title}>
               <h3>{habit.title}</h3>
-              <p>Prioritet: {habit.priority}</p>
+              <p>Priority: {habit.priority}</p>
             </div>
           ))}
-          <Link to="/habits">Se fler vanor</Link>
+          <Link to="/habits">See More Habits</Link>
         </div>
       </div>
     </>

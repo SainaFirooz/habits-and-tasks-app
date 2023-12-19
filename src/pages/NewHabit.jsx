@@ -23,7 +23,7 @@ const NewHabit = ({ addHabit }) => {
 
   return (
     <>
-      <h1>Lägg till en ny vana</h1>
+      <h1>Create a New Habit</h1>
       <Nav />
       <form onSubmit={formSubmit}>
         <div>
@@ -45,7 +45,7 @@ const NewHabit = ({ addHabit }) => {
           />
         </div>
         <div>
-          <label>Prioritet: </label>
+          <label>Priority: </label>
           <select
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
@@ -57,7 +57,7 @@ const NewHabit = ({ addHabit }) => {
           </select>
         </div>
         <div type="submit">
-          <button>Skapa ny Vana</button>
+          <button>Create New Habit</button>
         </div>
       </form>
     </>

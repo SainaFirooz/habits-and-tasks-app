@@ -37,7 +37,7 @@ const Habits = ({ habits, setHabits }) => {
         compareValueB = b.startStreak;
       }
 
-      const sortMulti = sortOrder === "högst till lägs" ? -1 : 1;
+      const sortMulti = sortOrder === "högst till lägst" ? -1 : 1;
 
       return sortMulti * (compareValueB - compareValueA);
     });
@@ -47,16 +47,16 @@ const Habits = ({ habits, setHabits }) => {
 
   const handleStreakSort = () => {
     const streakOrder =
-      streakSort === "högst till lägs" ? "lägst till högst" : "högst till lägs";
+      streakSort === "högst till lägst" ? "lägst till högst" : "högst till lägst";
     setStreakSort(streakOrder);
     handleSort("streak", streakOrder);
   };
 
   const handlePrioritySort = () => {
     const priorityOrder =
-      prioritySort === "högst till lägs"
+      prioritySort === "högst till lägst"
         ? "lägst till högst"
-        : "högst till lägs";
+        : "högst till lägst";
     setPrioritySort(priorityOrder);
     handleSort("priority", priorityOrder);
   };
