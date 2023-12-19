@@ -58,6 +58,19 @@ const Habits = ({ habits, setHabits}) => {
      handleSort("priority", priorityOrder);
   };
 
+  const increaseStreak = (habitTitle) => {
+    setHabits((prevHabits) => 
+    prevHabits.map((habit) => 
+      habit.title === habitTitle ? { ...habit, startStreak: (habit.startStreak || 0) + 1 } : habit
+      )
+    );
+  };
+
+
+  
+
+
+
 
 
 
