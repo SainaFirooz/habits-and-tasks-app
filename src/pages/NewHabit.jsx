@@ -7,6 +7,8 @@ const NewHabit = ({ addHabit }) => {
   const [startStreak, setStartStreak] = useState(0);
   const [priority, setPriority] = useState("low");
 
+  const navigate = useNavigate();
+
   const handleStreakChange = (e) => {
     const newStreak = parseInt(e.target.value, 10);
     setStartStreak(newStreak >= 0 ? newStreak : 0);
