@@ -37,7 +37,7 @@ const Habits = ({ habits, setHabits }) => {
         compareValueB = b.startStreak;
       }
 
-      const sortMulti = sortOrder === "högst till lägst" ? -1 : 1;
+      const sortMulti = sortOrder === "highest to lowest" ? -1 : 1;
 
       return sortMulti * (compareValueB - compareValueA);
     });
@@ -47,16 +47,16 @@ const Habits = ({ habits, setHabits }) => {
 
   const handleStreakSort = () => {
     const streakOrder =
-      streakSort === "högst till lägst" ? "lägst till högst" : "högst till lägst";
+      streakSort === "highest to lowest" ? "lowest to highest" : "highest to lowest";
     setStreakSort(streakOrder);
     handleSort("streak", streakOrder);
   };
 
   const handlePrioritySort = () => {
     const priorityOrder =
-      prioritySort === "högst till lägst"
-        ? "lägst till högst"
-        : "högst till lägst";
+      prioritySort === "highest to lowest"
+        ? "lowest to highest"
+        : "highest to lowest";
     setPrioritySort(priorityOrder);
     handleSort("priority", priorityOrder);
   };
@@ -124,29 +124,29 @@ const Habits = ({ habits, setHabits }) => {
       <h1>Mina Vanor</h1>
       <Nav />
       {!habits || habits.length === 0 ? (
-        <p>Inga vanor att visa. Vänligen skapa en.</p>
+        <p>You have no Habits. Please create one.</p>
       ) : (
         <>
-          <button onClick={() => navigate("/NewHabit")}>Skapa ny vana</button>
+          <button onClick={() => navigate("/NewHabit")}>Create New habit</button>
 
           <button onClick={handleStreakSort}>
-            Sortera Streak ({streakSort})
+            Sort By Streak ({streakSort})
           </button>
 
           <button onClick={handlePrioritySort}>
-            Sortera Prioritet ({prioritySort})
+            Sort By Priority ({prioritySort})
           </button>
 
           <table>
             <thead>
               <tr>
-                <th>Titel</th>
-                <th>Prioritet</th>
-                <th>Öka</th>
-                <th>Streak</th>
-                <th>Minska</th>
-                <th>Nollställa</th>
-                <th>Ta bort</th>
+                <th>Title </th>
+                <th>Priority </th>
+                <th>Increase </th>
+                <th>Streak </th>
+                <th>Decrease </th>
+                <th>Reset</th>
+                <th>Delete</th>
               </tr>
             </thead>
             <tbody>
@@ -167,12 +167,12 @@ const Habits = ({ habits, setHabits }) => {
                   </td>
                   <td>
                     <button onClick={() => resetStreak(habit.title)}>
-                      Nollställa
+                      Reset
                     </button>
                   </td>
                   <td>
                     <button onClick={() => deleteHabit(habit.title)}>
-                      Ta bort
+                      Delete
                     </button>
                   </td>
                 </tr>
@@ -180,7 +180,7 @@ const Habits = ({ habits, setHabits }) => {
             </tbody>
           </table>
 
-          <button onClick={resetAllStreaks}>Nollställa alla streaks</button>
+          <button onClick={resetAllStreaks}>Reset All Habits</button>
         </>
       )}
     </>
