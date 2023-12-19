@@ -1,14 +1,21 @@
 import Nav from "../compartments/Nav";
+import './style.css' 
+import { useNavigate } from "react-router-dom";
+import { Link } from 'react-router-dom';
+
 
 const HomePage = () => {
+  const navigate = useNavigate();
 
-    return (
+  const seeMorebtn = () => {
+    navigate("/habits");
+  }
+
+  return (
     <>
-    <h1>Habits & Tasks</h1>
-    <Nav />
+    <h2>Habits & Tasks</h2>
+    
     
     </>
   )
 }
-
-export default HomePage;
