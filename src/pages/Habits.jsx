@@ -92,9 +92,20 @@ const Habits = ({ habits, setHabits }) => {
 
     setHabits((prevHabits) =>
       prevHabits.map((habit) =>
-        habit.title === habitTitle ? {...habit, startStreak: 0 } : habit
+        habit.title === habitTitle ? { ...habit, startStreak: 0 } : habit
       )
     );
+  };
+
+  const deleteHabit = (habitTitle) => {
+    const updatedHabits = habits.filter((habit) => habit.title !== habitTitle);
+    setHabits(updatedHabits);
+
+    setStreaks((prevStreaks) => {
+      const { [habitTitle]: deletedStreak, ...restStreaks } = prevStreaks;
+      return restStreaks;
+    });
+    localStorage.setItem("habits", JSON.stringify(updatedHabits));
   };
 
   return <></>;
