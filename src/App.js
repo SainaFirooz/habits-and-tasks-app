@@ -19,7 +19,7 @@ const App = () => {
   useEffect(() => {
     const highPriority = habits.filter((habit) => habit.priority === "high");
     
-    const sortedHabits = highPriority,sort((a, b) => priorityOrder[a.priority]);
+    const sortedHabits = highPriority.sort((a, b) => priorityOrder[a.priority]);
    
     const topThreeHabits = sortedHabits.slice(0, 3);
 
