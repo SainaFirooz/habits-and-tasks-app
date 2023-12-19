@@ -165,6 +165,12 @@ const Habits = ({ habits, setHabits }) => {
                 </button>
               </td>
               <td>{habit.startStreak}</td>
+              <td>
+                <button onClick={() => decreaseStreak(habit.title)}>
+                -
+                </button>
+              </td>
+
               
             </tr>
           ))}
