@@ -92,7 +92,7 @@ const Habits = ({ habits, setHabits }) => {
 
     setHabits((prevHabits) =>
       prevHabits.map((habit) =>
-        habit.title === habitTitle ? { ...habit, startStreak: 0 } : habit
+        habit.title === habitTitle ? {...habit, startStreak: 0 } : habit
       )
     );
   };
