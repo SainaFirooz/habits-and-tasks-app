@@ -17,7 +17,7 @@ const HomePage = ({ topThreeHabits }) => {
           {topThreeHabits.map((habit) => (
             <div key={habit.title}>
               <h3>{habit.title}</h3>
-              <p>Prioritet{habit.priority}</p>
+              <p>Prioritet: {habit.priority}</p>
             </div>
           ))}
           <Link to="/habits">Se fler vanor</Link>
