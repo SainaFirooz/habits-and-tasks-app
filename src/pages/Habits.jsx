@@ -11,6 +11,8 @@ const Habits = ({ habits, setHabits }) => {
     JSON.parse(localStorage.getItem("streaks")) || {}
   );
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     setFilteredHabits(habits);
   }, [habits]);
@@ -128,6 +130,9 @@ const Habits = ({ habits, setHabits }) => {
       <p>Inga vanor att visa. Vänligen skapa en.</p>
      ) : ( 
       <> 
+      <button onClick={() => navigate("/NewHabit")}>
+        Skapa en ny vana
+      </button>
       
       
       
