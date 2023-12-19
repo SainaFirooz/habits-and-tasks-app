@@ -36,11 +36,23 @@ const NewHabit = ({ addHabit }) => {
 
         <div>
           <label>Streak: </label>
-          <input 
-          type="number"
-          value={startStreak}
-          onChange={handleStreakChange}
+          <input
+            type="number"
+            value={startStreak}
+            onChange={handleStreakChange}
           />
+        </div>
+        <div>
+          <label>Prioritet: </label>
+          <select
+            value={priority}
+            onChange={(e) => setPriority(e.target.value)}
+            required
+          >
+            <option value="low">Low</option>
+            <option value="medium">Medium</option>
+            <option value="high">High</option>
+          </select>
         </div>
       </form>
     </>
