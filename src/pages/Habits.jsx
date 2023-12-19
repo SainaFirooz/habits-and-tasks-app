@@ -7,7 +7,7 @@ const Habits = ({ habits, setHabits}) => {
   const [filteredHabits, setFilteredHabits] = useState([]);
   const [streakSort, setStreakSort] = useState("Sortera fallande");
   const [prioritySort, setPrioritySort] = useState("Sortera fallande");
-  const priorityOrder = { low: 1, medium: 2, high: 3};
+  const priorityValue = { low: 1, medium: 2, high: 3};
   const [streaks, setStreaks] = useState(JSON.parse(localStorage.getItem("streaks")) || {});
   
   useEffect(() => {
@@ -28,8 +28,8 @@ const Habits = ({ habits, setHabits}) => {
         compareValueA = a.startStreak;
         compareValueB = b.startStreak;
       } else if (sortByField === "priority") {
-        compareValueA = priorityOrder[a.priority];
-        compareValueB = priorityOrder[b.priority];
+        compareValueA = priorityValue[a.priority];
+        compareValueB = priorityValue[b.priority];
       } else {
         compareValueA = a.startStreak;
         compareValueB = b.startStreak;
@@ -48,6 +48,14 @@ const Habits = ({ habits, setHabits}) => {
       streakSort === "Sortera fallande" ? "Sortera stigande" : "Sortera fallande";
     setStreakSort(streakOrder);
     handleSort("streak", streakOrder);
+  };
+
+
+  const handlePrioritySort = () => {
+    const priorityOrder =
+     prioritySort ===  "Sortera fallande" ? "Sortera stigande" : "Sortera fallande";
+     setPrioritySort(priorityOrder);
+     handleSort("priority", priorityOrder);
   };
 
 
