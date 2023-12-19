@@ -22,9 +22,20 @@ const App = () => {
     const sortedHabits = highPriority,sort((a, b) => priorityOrder[a.priority]);
    
     const topThreeHabits = sortedHabits.slice(0, 3);
+
+    setTopThreeHabits(topThreeHabits);
   }, [habits]);
 
-  return <div></div>;
+  return (
+    <div>
+      <Routes>
+         <Route path="/" element={<HomePage topThreeHabits={topThreeHabits} />} />
+         <Route path='/habits' element={<Habits habits={habits} setHabits={setHabits} streaks={streaks} setStreaks={setStreaks} />} />
+         <Route path="/NewHabit" element={<NewHabit addHabit={addHabit} />} />
+      </Routes>
+      </div>
+
+  )
 };
 
 export default App;
