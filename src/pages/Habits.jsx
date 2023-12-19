@@ -84,6 +84,19 @@ const Habits = ({ habits, setHabits }) => {
     );
   };
 
+  const resetStreak = (habitTitle) => {
+    setStreaks((prevStreaks) => ({
+      ...prevStreaks,
+      [habitTitle]: 0,
+    }));
+
+    setHabits((prevHabits) =>
+      prevHabits.map((habit) =>
+        habit.title === habitTitle ? { ...habit, startStreak: 0 } : habit
+      )
+    );
+  };
+
   return <></>;
 };
 
