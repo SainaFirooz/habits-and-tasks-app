@@ -134,8 +134,12 @@ const Habits = ({ habits, setHabits }) => {
         Skapa ny vana
       </button>
 
+      <button onClick={handleStreakSort}>
+        Sortera Streak ({streakSort})
+      </button>
+
       <button onClick={handlePrioritySort}>
-        Sortera Prioritet
+        Sortera Prioritet ({prioritySort})
       </button>
 
       
