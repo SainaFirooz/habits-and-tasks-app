@@ -4,8 +4,8 @@ import Nav from "../compartments/Nav";
 
 const Habits = ({ habits, setHabits }) => {
   const [filteredHabits, setFilteredHabits] = useState([]);
-  const [streakSort, setStreakSort] = useState("Sortera fallande");
-  const [prioritySort, setPrioritySort] = useState("Sortera fallande");
+  const [streakSort, setStreakSort] = useState("högst till lägs");
+  const [prioritySort, setPrioritySort] = useState("högst till lägs");
   const priorityValue = { low: 1, medium: 2, high: 3 };
   const [streaks, setStreaks] = useState(
     JSON.parse(localStorage.getItem("streaks")) || {}
@@ -37,7 +37,7 @@ const Habits = ({ habits, setHabits }) => {
         compareValueB = b.startStreak;
       }
 
-      const sortMulti = sortOrder === "Sortera fallande" ? -1 : 1;
+      const sortMulti = sortOrder === "högst till lägs" ? -1 : 1;
 
       return sortMulti * (compareValueB - compareValueA);
     });
@@ -47,18 +47,18 @@ const Habits = ({ habits, setHabits }) => {
 
   const handleStreakSort = () => {
     const streakOrder =
-      streakSort === "Sortera fallande"
-        ? "Sortera stigande"
-        : "Sortera fallande";
+      streakSort === "högst till lägs"
+        ? "lägst till högst"
+        : "högst till lägs";
     setStreakSort(streakOrder);
     handleSort("streak", streakOrder);
   };
 
   const handlePrioritySort = () => {
     const priorityOrder =
-      prioritySort === "Sortera fallande"
-        ? "Sortera stigande"
-        : "Sortera fallande";
+      prioritySort === "högst till lägs"
+        ? "lägst till högst"
+        : "högst till lägs";
     setPrioritySort(priorityOrder);
     handleSort("priority", priorityOrder);
   };
@@ -131,8 +131,14 @@ const Habits = ({ habits, setHabits }) => {
      ) : ( 
       <> 
       <button onClick={() => navigate("/NewHabit")}>
-        Skapa en ny vana
+        Skapa ny vana
       </button>
+
+      <button onClick={handlePrioritySort}>
+        Sortera Prioritet
+      </button>
+
+      
       
       
       
