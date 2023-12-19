@@ -5,8 +5,8 @@ import Nav from "../compartments/Nav";
 
 const Habits = ({ habits, setHabits}) => {
   const [filteredHabits, setFilteredHabits] = useState([]);
-  const [streakSort, setStreakSort] = useState("highest to lowest");
-  const [prioritySort, setPrioritySort] = useState("highest to lowest");
+  const [streakSort, setStreakSort] = useState("Sortera fallande");
+  const [prioritySort, setPrioritySort] = useState("Sortera fallande");
   const priorityOrder = { low: 1, medium: 2, high: 3};
   const [streaks, setStreaks] = useState(JSON.parse(localStorage.getItem("streaks")) || {});
   
@@ -35,13 +35,20 @@ const Habits = ({ habits, setHabits}) => {
         compareValueB = b.startStreak;
       }
 
-      const sortMulti = sortOrder === "highest to lowest" ? -1 : 1;
+      const sortMulti = sortOrder === "Sortera fallande" ? -1 : 1;
 
       return sortMulti * (compareValueB - compareValueA);
     });
 
     setFilteredHabits(sortHabits);
-  }
+  };
+
+  const handleStreakSort = () => {
+    const streakOrder = 
+      streakSort === "Sortera fallande" ? "Sortera stigande" : "Sortera fallande";
+    setStreakSort(streakOrder);
+    handleSort("streak", streakOrder);
+  };
 
 
 
