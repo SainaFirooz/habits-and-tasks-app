@@ -54,6 +54,9 @@ const NewHabit = ({ addHabit }) => {
             <option value="high">High</option>
           </select>
         </div>
+        <div type="submit">
+          <button>Skapa ny Vana</button>
+        </div>
       </form>
     </>
   );
