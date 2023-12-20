@@ -3,6 +3,10 @@ import { Routes, Route } from "react-router-dom";
 import Habits from "./pages/Habits";
 import HomePage from "./pages/HomePage";
 import NewHabit from "./pages/NewHabit";
+import NewTask from './pages/NewTask';
+import Task from './pages/Task';
+import { TaskProvider } from './pages/TaskContext';
+
 
 const App = () => {
   const [habits, setHabits] = useState(() => JSON.parse(localStorage.getItem("habits")) || []);
@@ -24,13 +28,17 @@ const App = () => {
   }, [habits]);
 
   return (
+    <TaskProvider>
     <div>
       <Routes>
          <Route path="/" element={<HomePage topThreeHabits={topThreeHabits} />} />
          <Route path='/habits' element={<Habits habits={habits} setHabits={setHabits} streaks={streaks} setStreaks={setStreaks} />} />
          <Route path="/NewHabit" element={<NewHabit addHabit={addHabit} />} />
+         <Route path="/NewTask" element={<NewTask/>} />
+          <Route path="/tasks" element={<Task/>} />
       </Routes>
       </div>
+      </TaskProvider>
 
   )
 };
