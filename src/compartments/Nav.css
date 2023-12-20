@@ -1,0 +1,35 @@
+
+nav {
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+  
+  li {
+    margin: 0 10px;
+  }
+  li a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 20px;
+  }
+  
+  Link {
+    text-decoration: none;
+    color: white;
+    
+  }
+  
+  Link:hover {
+    text-decoration: none;
+    color: #c9c7c7
+  }
+  
