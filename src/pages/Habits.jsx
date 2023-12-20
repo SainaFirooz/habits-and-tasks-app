@@ -4,8 +4,8 @@ import Nav from "../compartments/Nav";
 
 const Habits = ({ habits, setHabits }) => {
   const [filteredHabits, setFilteredHabits] = useState([]);
-  const [streakSort, setStreakSort] = useState("högst till lägs");
-  const [prioritySort, setPrioritySort] = useState("högst till lägs");
+  const [streakSort, setStreakSort] = useState("highest to lowest");
+  const [prioritySort, setPrioritySort] = useState("highest to lowest");
   const priorityValue = { low: 1, medium: 2, high: 3 };
   const [streaks, setStreaks] = useState(
     JSON.parse(localStorage.getItem("streaks")) || {}
