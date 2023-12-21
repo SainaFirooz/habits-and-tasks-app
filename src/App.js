@@ -9,25 +9,9 @@ import { TaskProvider } from './pages/TaskContext';
 
 
 const App = () => {
-  const [habits, setHabits] = useState(() => {
-    try {
-      return JSON.parse(localStorage.getItem("habits")) || [];
-    } catch (error) {
-      console.error("Error parsing habits from localStorage:", error);
-      return [];
-    }
-  });
-
-  const [streaks, setStreaks] = useState(() => {
-    try {
-      return JSON.parse(localStorage.getItem("streaks")) || [];
-    } catch (error) {
-      console.error("Error parsing streaks from localStorage:", error);
-      return [];
-    }
-  });
+  const [habits, setHabits] = useState(() => JSON.parse(localStorage.getItem("habits")) || []);
+  const [streaks, setStreaks] = useState(() => JSON.parse(localStorage.getItem("streaks")) || []);
   const [topThreeHabits, setTopThreeHabits] = useState([]);
-
   const priorityOrder = { low: 1, medium: 2, high: 3 };
 
   const addHabit = (newHabit) => {
