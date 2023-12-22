@@ -31,7 +31,7 @@ const NewTask = () => {
     return (
 <div> 
     <Nav />
-    <div className="h-screen flex justify-center items-center flex-col gap-8"> 
+    <div className="mt-6 flex justify-center items-center flex-col gap-8"> 
         <div className="flex justify-center items-center gap-6"> 
             <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="flex flex-col gap-6">
