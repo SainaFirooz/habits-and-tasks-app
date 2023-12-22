@@ -24,7 +24,7 @@ const NewHabit = ({ addHabit }) => {
   return (
     <div> 
        <Nav />
-    <div className="h-screen flex justify-center items-center flex-col gap-8">
+       <div className="mt-6 flex justify-center items-center flex-col gap-8"> 
     <div className="flex justify-center items-center gap-6"> 
       
      
