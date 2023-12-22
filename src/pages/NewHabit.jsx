@@ -5,7 +5,7 @@ import Nav from "../compartments/Nav";
 const NewHabit = ({ addHabit }) => {
   const [title, setTitle] = useState("");
   const [startStreak, setStartStreak] = useState(0);
-  const [priority, setPriority] = useState("low");
+  const [priority, setPriority] = useState("");
 
   const navigate = useNavigate();
 
@@ -22,45 +22,53 @@ const NewHabit = ({ addHabit }) => {
   };
 
   return (
-    <>
-      <h1>Create a New Habit</h1>
-      <Nav />
-      <form onSubmit={formSubmit}>
-        <div>
-          <label>Titel: </label>
-          <input
+    <div> 
+       <Nav />
+    <div className="h-screen flex justify-center items-center flex-col gap-8">
+    <div className="flex justify-center items-center gap-6"> 
+      
+     
+      <form className="flex flex-col gap-4" onSubmit={formSubmit}>
+        <div className="flex gap-6">
+         
+          <input className="w-72 border-2 rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
             type="text"
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
+            placeholder="Välj titel här och sedan streak nedan"
           />
         </div>
 
         <div>
-          <label>Streak: </label>
-          <input
+          
+          <input className="w-72 border-2 rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
             type="number"
             value={startStreak}
             onChange={handleStreakChange}
+            placeholder="0"
           />
         </div>
         <div>
-          <label>Priority: </label>
-          <select
+          <label></label>
+          <select className="w-72 border-2 rounded-md px-3 py-3 bg-[#E8ECF4] backdrop-blur-lg"
             value={priority}
             onChange={(e) => setPriority(e.target.value)}
             required
-          >
+          > 
+          <option value="">Välj prioritet</option>
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
           </select>
         </div>
         <div type="submit">
-          <button>Create New Habit</button>
+          <button className="px-5 py-2 bg-sky-900 text-white font-medium rounded-md">Create New Habit</button>
         </div>
       </form>
-    </>
+      </div>
+    </div>
+    </div>
   );
 };
 
