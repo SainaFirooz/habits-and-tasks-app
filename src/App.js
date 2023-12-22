@@ -12,7 +12,6 @@ const App = () => {
   const [habits, setHabits] = useState(() => JSON.parse(localStorage.getItem("habits")) || []);
   const [streaks, setStreaks] = useState(() => JSON.parse(localStorage.getItem("streaks")) || []);
   const [topThreeHabits, setTopThreeHabits] = useState([]);
-
   const priorityOrder = { low: 1, medium: 2, high: 3 };
 
   const addHabit = (newHabit) => {
