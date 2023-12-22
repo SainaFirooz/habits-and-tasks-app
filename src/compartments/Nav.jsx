@@ -2,27 +2,26 @@ import { Link } from "react-router-dom";
 import "./Nav.css";
 const Nav = () => {
     return (
+
         <>
-        <nav>
-            <ul>
-                <li>
-                    <Link to="/">Home</Link>
-                </li>
-                <li>
-                    <Link to="/habits"> Habits</Link>
-                </li>
-                <li>
-                    <Link to="/tasks"> Tasks</Link>
-                </li>
-                <li>
-                    <Link to="/newhabit">Add New Habits </Link>
-                </li>
-                <li>
-                    <Link to="/newtask"> Add New tasks</Link>
-                </li>
-            </ul>
-        </nav>
-        
+
+            <nav class="flex items-center justify-between flex-wrap bg-sky-900 p-6">
+                <div class="flex items-center flex-shrink-0 text-white mr-6">
+                    <span class="font-semibold text-xl tracking-tight">Habits & Tasks</span>
+                </div>
+                <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+                    <div class="text-sm lg:flex-grow">
+                        <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/">Home</Link>
+                        <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/habits"> Habits</Link>
+                        <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/tasks"> Tasks</Link>
+                        <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/newhabit">Add new habits </Link>
+                        <Link className="block mt-4 lg:inline-block lg:mt-0 text-white hover:text-white mr-4" to="/newtask"> Add new tasks</Link>
+
+                    </div>
+
+                </div>
+            </nav>
+
         </>
     )
 }
