@@ -27,13 +27,14 @@ const HomePage = ({ topThreeHabits }) => {
       <div className="flex justify-between items-center mb-5">
         {topThreeHabits.map((habit) => (
           <ul className="text-sm">
-            <li className="list-none w-2/3 text-left break-normal" key={habit.title}>
+            <li className="list-none w-3/3 text-left break-normal" key={habit.title}>
               <p className="font-bold">{habit.title}</p>
+              <br/>
               <p><span className="font-bold">Priority:</span> {habit.priority}</p>
             </li>
           </ul>
         ))}
-        <Link to="/habits" className="text-sm">See more habits</Link>
+        <Link to="/habits" className="text-sm font-bold">See more habits</Link>
       </div>
     </div>
   </div>
