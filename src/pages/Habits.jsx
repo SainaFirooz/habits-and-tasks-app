@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../compartments/Nav";
+import Footer from "../compartments/footer";
 
 const Habits = ({ habits, setHabits }) => {
   const [filteredHabits, setFilteredHabits] = useState([]);
@@ -202,7 +203,9 @@ const Habits = ({ habits, setHabits }) => {
           </div>
         )}
       </div>
+      <Footer />
     </>
+    
   );
 };
 

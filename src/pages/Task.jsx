@@ -1,6 +1,7 @@
 import Nav from "../compartments/Nav";
 import React, { useState, useContext } from 'react';
 import { TaskContext } from './TaskContext';
+import Footer from "../compartments/footer";
 
 const Tasks = () => {
     const { tasks, deleteTask, toggleComplete, updateTask } = useContext(TaskContext);
@@ -51,6 +52,7 @@ const Tasks = () => {
     const completedTasks = tasks.filter(task => task.completed);
 
     return (
+        <> 
 
         <div>
             <Nav />
@@ -145,7 +147,8 @@ const Tasks = () => {
                 </div>
             </div>
         </div>
-
+        <Footer />
+</>
     );
 };
 
