@@ -36,7 +36,7 @@ const NewHabit = ({ addHabit }) => {
             value={title}
             onChange={(e) => setTitle(e.target.value)}
             required
-            placeholder="Välj titel här och sedan streak nedan"
+            placeholder="Title here and then streak below"
           />
         </div>
 
@@ -56,7 +56,7 @@ const NewHabit = ({ addHabit }) => {
             onChange={(e) => setPriority(e.target.value)}
             required
           > 
-          <option value="">Välj prioritet</option>
+          <option value="">Select priority</option>
             <option value="low">Low</option>
             <option value="medium">Medium</option>
             <option value="high">High</option>
