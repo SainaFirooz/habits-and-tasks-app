@@ -2,6 +2,7 @@ import Nav from "../compartments/Nav";
 import React, { useState, useContext } from 'react';
 import axios from 'axios';
 import { TaskContext } from './TaskContext';
+import Footer from "../compartments/footer";
 
 const NewTask = () => {
     const { addTask } = useContext(TaskContext);
@@ -29,6 +30,7 @@ const NewTask = () => {
     };
 
     return (
+        <> 
 <div> 
     <Nav />
     <div className="mt-6 flex justify-center items-center flex-col gap-8"> 
@@ -67,6 +69,8 @@ const NewTask = () => {
         </div>
     </div>
 </div>
+<Footer />
+</> 
     );
 };
 

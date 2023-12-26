@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Nav from "../compartments/Nav";
+import Footer from "../compartments/footer";
 
 const NewHabit = ({ addHabit }) => {
   const [title, setTitle] = useState("");
@@ -22,6 +23,7 @@ const NewHabit = ({ addHabit }) => {
   };
 
   return (
+    <>
     <div> 
        <Nav />
        <div className="mt-6 flex justify-center items-center flex-col gap-8"> 
@@ -69,6 +71,8 @@ const NewHabit = ({ addHabit }) => {
       </div>
     </div>
     </div>
+  <Footer />  
+  </>
   );
 };
 
