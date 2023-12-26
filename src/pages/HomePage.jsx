@@ -3,6 +3,7 @@ import "./style.css";
 import { Link } from "react-router-dom";
 import { TaskContext } from './TaskContext';
 import React, { useContext } from 'react';
+import Footer from "../compartments/footer";
 
 const HomePage = ({ topThreeHabits }) => {
 
@@ -62,7 +63,7 @@ const HomePage = ({ topThreeHabits }) => {
   </div>
 
 </div>
-
+<Footer />
 
     </>
   );
