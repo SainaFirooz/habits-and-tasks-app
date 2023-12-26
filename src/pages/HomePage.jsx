@@ -48,7 +48,7 @@ const HomePage = ({ topThreeHabits }) => {
       <div className="flex justify-between items-center mb-5">
         {latestTasks.map(task => (
           <ul className="text-sm">
-            <li className="list-none w-2/3 text-left break-normal" key={task.id}>
+            <li className="list-none w-3/3 text-left break-normal" key={task.id}>
               <p className="font-bold">{task.title}</p>
               <p><span className="font-bold">Beskrivning:</span> {task.description}</p>
               <p><span className="font-bold">Tidsestimat:</span> {task.estimate}</p>
@@ -57,7 +57,7 @@ const HomePage = ({ topThreeHabits }) => {
             </li>
           </ul>
         ))}
-        <Link to="/tasks" className="text-sm">See more tasks</Link>
+        <Link to="/tasks" className="text-sm font-bold">See more tasks</Link>
       </div>
     </div>
   </div>
