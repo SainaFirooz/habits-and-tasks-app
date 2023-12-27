@@ -1,5 +1,4 @@
 import Nav from "../compartments/Nav";
-import "./style.css";
 import { Link } from "react-router-dom";
 import { TaskContext } from './TaskContext';
 import React, { useContext } from 'react';
@@ -28,7 +27,7 @@ const HomePage = ({ topThreeHabits }) => {
       <div className="flex justify-between items-center mb-5">
         {topThreeHabits.map((habit) => (
           <ul className="text-sm">
-            <li className="list-none w-3/3 text-left break-normal" key={habit.title}>
+            <li className="list-none w-3/3 text-left break-normal m-1" key={habit.title}>
               <p className="font-bold">{habit.title}</p>
               <br/>
               <p><span className="font-bold">Priority:</span> {habit.priority}</p>
@@ -48,7 +47,7 @@ const HomePage = ({ topThreeHabits }) => {
       <div className="flex justify-between items-center mb-5">
         {latestTasks.map(task => (
           <ul className="text-sm">
-            <li className="list-none w-3/3 text-left break-normal" key={task.id}>
+            <li className="list-none w-3/3 text-left break-normal m-1" key={task.id}>
               <p className="font-bold">{task.title}</p>
               <p><span className="font-bold">Beskrivning:</span> {task.description}</p>
               <p><span className="font-bold">Tidsestimat:</span> {task.estimate}</p>
