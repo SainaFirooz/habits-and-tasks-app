@@ -50,10 +50,10 @@ const HomePage = ({ topThreeHabits }) => {
           <ul className="text-sm">
             <li className="list-none w-3/3 text-left break-normal m-2" key={task.id}>
               <p className="font-bold">{task.title}</p>
-              <p><span className="font-bold">Beskrivning:</span> {task.description}</p>
-              <p><span className="font-bold">Tidsestimat:</span> {task.estimate}</p>
-              <p><span className="font-bold">Typ:</span> {task.type}</p>
-              <p><span className="font-bold">Status:</span> {task.completed ? 'Slutfört' : 'Ej slutfört'}</p>
+              <p><span className="font-bold">Description:</span> {task.description}</p>
+              <p><span className="font-bold">Time estimate:</span> {task.estimate}</p>
+              <p><span className="font-bold">Type:</span> {task.type}</p>
+              <p><span className="font-bold">Status:</span> {task.completed ? 'Completed' : 'Not completed'}</p>
             </li>
           </ul>
         ))}

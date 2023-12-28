@@ -57,29 +57,29 @@ const Tasks = () => {
         <div>
             <Nav />
             <h1 className="w-full text-center font-semibold uppercase text-xl tracking-tight my-1 mt-6">
-                Ärenden
+                Tasks
             </h1>
 
             <div className="w-full text-center flex items-center flex-col gap-5">
                 <div className="flex justify-center mb-5 gap-2">
                     <select className="px-5 py-2 bg-sky-900 text-white font-medium rounded-md" onChange={handleFilterChange}>
-                        <option value="">Alla</option>
-                        <option value="hushållssysslor">Hushållssysslor</option>
-                        <option value="aktivitet med vänner">Aktivitet med vänner</option>
-                        <option value="jobbrelaterad">Jobbrelaterad</option>
+                        <option value="">All</option>
+                        <option value="hushållssysslor">Household chores</option>
+                        <option value="aktivitet med vänner">Activity with friends</option>
+                        <option value="jobbrelaterad">Job related</option>
                     </select>
                     <select className="px-5 py-2 bg-sky-900 text-white font-medium rounded-md" onChange={handleSortChange}>
-                        <option value="title">Titel</option>
-                        <option value="estimate">Tidsestimat</option>
+                        <option value="title">Title</option>
+                        <option value="estimate">Time estimate</option>
                     </select>
                     <button className="px-5 py-2 bg-sky-900 text-white font-medium rounded-md" onClick={toggleSortOrder}>
-                        {isAscending ? 'Stigande' : 'Fallande'}
+                        {isAscending ? 'Ascending' : 'Descending'}
                     </button>
                     
                 </div>
 
                 <div className="w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md">
-                    <h2 className="font-semibold uppercase text-lg tracking-tight">Aktiva Ärenden</h2>
+                    <h2 className="font-semibold uppercase text-lg tracking-tight">Active tasks</h2>
                     {sortedTasks.map(task => (
                         <div key={task.id} className="mb-2">
                             {editingId === task.id ? (
@@ -129,7 +129,7 @@ const Tasks = () => {
                 </div>
 
                 <div className="w-1/2 bg-slate-300 backdrop-blur-lg px-3 py-5 rounded-md mt-5">
-                    <h2 className="font-semibold uppercase text-lg tracking-tight">Slutförda Ärenden</h2>
+                    <h2 className="font-semibold uppercase text-lg tracking-tight">Completed tasks</h2>
                     {completedTasks.map(task => (
                         <div key={task.id} className="mb-2">
                             <div className="flex justify-between items-center">
