@@ -1,13 +1,14 @@
 # Habits & Tasks webbapplikation
 
-Projektarbete för Frontend 2 skapat av Saina och Robert
+Ett projektarbete för 'Frontend 2' av Saina och Robert
 
 ## Installation
+
+För att starta applikationen, kör följande kommandon:
 
 ### `npm install`
 ### `npm start`
 
-Sidan nås på http://localhost:3000
+Applikationen är sedan tillgänglig på http://localhost:3000
 
-
-Hemsidan fungerar bäst i Chrome.
+För bästa användarupplevelse, rekommenderar vi att använda hemsidan i Chrome.
